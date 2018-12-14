@@ -1,0 +1,28 @@
+version: '2'
+services:
+ alfresco:
+  build: ./alfresco
+  links:
+   - share
+   - solr4
+   - libreoffice
+  extra_hosts:
+   - "montrahost:$DOCKERHOST"
+
+ db:
+  build: ./postgres
+  network_mode: service:alfresco
+  environment:
+   - POSTGRES_DB=alfresco
+   - POSTGRES_USER=alfresco
+   - POSTGRES_PASSWORD=alfresco
+
+ share:
+  build: ./share
+
+ solr4:
+  build: ./solr4
+
+ libreoffice:
+  image: xcgd/libreoffice
+ 
