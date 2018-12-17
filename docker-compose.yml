@@ -23,6 +23,8 @@ services:
   build: ./share
   ports:
     - 8081:8080
+  extra_hosts:
+   - "montrahost:$DOCKERHOST"
 
  solr4:
   build: ./solr4
