@@ -40,7 +40,7 @@ COPY assets/amps amps
 RUN bash ./bin/apply_amps.sh -nobackup -force
 
 ENV PATH $ALF_HOME/bin:$PATH
-ENV LANG es_ES.utf8
+ENV LANG en_US.utf8
 
 RUN useradd -ms /bin/bash alfresco
 RUN set -x && chown -RL alfresco:alfresco $ALF_HOME

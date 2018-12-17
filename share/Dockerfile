@@ -18,7 +18,7 @@ RUN set -x \
         && mv $DIST/README.txt . \
         && rm -rf webapps/docs \
         && rm -rf webapps/examples \
-        && mkdir shared/lib amps_share \
+        && mkdir -p shared/lib amps_share \
         && rm -rf $DIST 
 
 
