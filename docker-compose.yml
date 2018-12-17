@@ -3,7 +3,6 @@ services:
  alfresco:
   build: ./alfresco
   links:
-   - share
    - solr4
    - libreoffice
   extra_hosts:
@@ -18,13 +17,6 @@ services:
    - POSTGRES_DB=alfresco
    - POSTGRES_USER=alfresco
    - POSTGRES_PASSWORD=alfresco
-
- share:
-  build: ./share
-  ports:
-    - 8081:8080
-  extra_hosts:
-   - "montrahost:$DOCKERHOST"
 
  solr4:
   build: ./solr4
