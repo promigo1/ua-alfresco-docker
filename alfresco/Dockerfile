@@ -19,7 +19,8 @@ RUN set -x \
 	&& mkdir -p conf/Catalina/localhost shared/classes/alfresco/extension \
 #	&& mv $DIST/web-server/shared . \
 	&& mv $DIST/web-server/webapps/alfresco.war webapps/alfresco.war \
-	&& mv $DIST/web-server/webapps/share.war webapps/share.war \
+	#&& mv $DIST/web-server/webapps/share.war webapps/share.war \
+	&& wget https://artifacts.alfresco.com/nexus/service/local/repositories/releases/content/org/alfresco/share/5.1.g/share-5.1.g.war -O webapps/share.war \
 	&& mv $DIST/web-server/lib/*.jar lib/ \
 	&& mv $DIST/alf_data . \
 	&& mv $DIST/amps . \
